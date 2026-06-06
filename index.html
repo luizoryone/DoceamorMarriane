@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doce Amor - Confeitaria Fina & Exclusiva</title>
+    <meta name="description" content="Uma marca criada com carinho, dedicação e o propósito de transformar momentos em memórias inesquecíveis. Descubra a Doce Amor.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            offwhite: '#FAF9F6',
+                            gold: '#C5A059',
+                            goldlight: '#E2C792',
+                            rose: '#DCAE96',
+                            dark: '#2C2A29',
+                            gray: '#595959'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar and selection colors for premium feel */
+        ::selection {
+            background-color: #DCAE96;
+            color: #FAF9F6;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAF9F6; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C5A059; 
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2C2A29; 
+        }
+
+        /* Diamond Border (Aço inox cravejado com diamantes) */
+        .diamond-border {
+            position: relative;
+            background: linear-gradient(135deg, #f0f0f0, #ffffff, #d4d4d4, #ffffff, #f0f0f0);
+            padding: 5px; /* Espessura da borda de inox */
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15), inset 0 0 10px rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .diamond-border:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(197, 160, 89, 0.2);
+        }
+        .diamond-border::before {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            border: 2px dotted rgba(255, 255, 255, 1); /* Os diamantes */
+            border-radius: 6px;
+            pointer-events: none;
+            box-shadow: 0 0 6px rgba(255, 255, 255, 0.9), inset 0 0 6px rgba(255, 255, 255, 0.9);
+            z-index: 10;
+        }
+        .diamond-border img {
+            border-radius: 4px;
+            display: block;
+        }
+        
+        /* Carousel Animation */
+        .carousel-track {
+            display: flex;
+            width: max-content;
+            animation: scroll-carousel 35s linear infinite;
+        }
+        .carousel-track:hover {
+            animation-play-state: paused;
+        }
+        @keyframes scroll-carousel {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
+</head>
+<body class="bg-brand-offwhite text-brand-dark font-sans antialiased">
+
+    <!-- Header (Opcional, flutuante ou minimalista) -->
+    <header class="fixed top-0 w-full z-50 bg-brand-offwhite/90 backdrop-blur-sm border-b border-brand-gold/20 py-4 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="block w-32">
+                <img src="assets/img/logoDA.png" alt="Doce Amor Logo" class="h-10 object-contain" />
+            </a>
+            <nav class="hidden md:flex space-x-8 text-xs tracking-widest uppercase font-medium">
+                <a href="#manifesto" class="hover:text-brand-gold transition-colors">Manifesto</a>
+                <a href="#colecoes" class="hover:text-brand-gold transition-colors">Coleções</a>
+                <a href="#agendamento" class="hover:text-brand-gold transition-colors">Agendamento</a>
+            </nav>
+            <a href="https://wa.me/5561998907423" target="_blank" class="text-xs tracking-widest uppercase font-medium border border-brand-gold text-brand-gold px-4 py-2 hover:bg-brand-gold hover:text-brand-offwhite transition-all">Contato</a>
+        </div>
+    </header>
+
+    <!-- 1. HERO SECTION -->
+    <section class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+        <!-- background image -->
+        <div class="absolute inset-0 z-0">
+            <img src="assets/img/fundo.png" alt="Doce Amor Background" class="w-full h-full object-cover object-center opacity-90" />
+            <div class="absolute inset-0 bg-brand-dark/50 mix-blend-multiply"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-4xl px-6 flex flex-col items-center mt-16">
+            <h1 class="text-brand-offwhite font-serif text-4xl md:text-5xl lg:text-6xl mb-6 tracking-wide leading-tight drop-shadow-md">
+                Uma nova identidade para uma marca feita de detalhes, afeto e sofisticação.
+            </h1>
+            <p class="text-brand-offwhite font-sans text-lg md:text-xl font-light mb-8 max-w-2xl drop-shadow-sm">
+                A Doce Amor entra em uma nova fase — mais elegante, moderna e alinhada à experiência que sempre sonhei entregar para cada cliente 💛
+            </p>
+            <p class="text-white/80 font-sans text-sm md:text-base font-light mb-10 max-w-3xl hidden md:block leading-relaxed">
+                Cada escolha dessa nova identidade foi pensada para transmitir exclusividade, delicadeza e encanto… porque acredito que doces especiais começam muito antes da primeira mordida. Mais do que uma nova logo, essa é a representação da evolução da minha marca ✨ Bem-vindos à nova era da Doce Amor.
+            </p>
+            <a href="#colecoes" class="inline-block border border-brand-gold text-brand-gold bg-transparent hover:bg-brand-gold hover:text-brand-offwhite transition-all duration-500 ease-in-out px-8 py-4 uppercase tracking-widest text-xs md:text-sm font-medium">
+                Conhecer a Coleção
+            </a>
+        </div>
+    </section>
+
+    <!-- CARROSSEL DE IMAGENS -->
+    <section class="py-16 bg-white overflow-hidden border-b border-brand-gold/10">
+        <div class="max-w-7xl mx-auto px-6 mb-10 text-center relative z-10">
+            <h2 class="font-serif text-3xl md:text-4xl text-brand-dark mb-4">Galeria de Criações</h2>
+            <div class="w-12 h-px bg-brand-gold mx-auto"></div>
+        </div>
+        <div class="relative w-full overflow-hidden">
+            <!-- Fade gradients for smooth edge transition -->
+            <div class="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+            
+            <div class="carousel-track flex space-x-6 px-4 items-center">
+                <!-- Set 1 -->
+                <div class="diamond-border w-64 md:w-72 flex-shrink-0" onclick="openModal('assets/img/carrossel/carrossel (1).jpg')">
+                    <img src="assets/img/carrossel/carrossel (1).jpg" alt="Doce Amor" class="w-full h-80 md:h-96 object-cover" />
+                </div>
+                <div class="diamond-border w-64 md:w-72 flex-shrink-0" onclick="openModal('assets/img/carrossel/carrossel (3).png')">
+                    <img src="assets/img/carrossel/carrossel (3).png" alt="Doce Amor" class="w-full h-80 md:h-96 object-cover" />
+                </div>
+                <div class="diamond-border w-64 md:w-72 flex-shrink-0" onclick="openModal('assets/img/carrossel/carrossel (4).png')">
+                    <img src="assets/img/carrossel/carrossel (4).png" alt="Doce Amor" class="w-full h-80 md:h-96 object-cover" />
+                </div>
+                <div class="diamond-border w-64 md:w-72 flex-shrink-0" onclick="openModal('assets/img/carrossel/carrossel (5).png')">
+                    <img src="assets/img/carrossel/carrossel (5).png" alt="Doce Amor" class="w-full h-80 md:h-96 object-cover" />
+                </div>
+                <div class="diamond-border w-64 md:w-72 flex-shrink-0" onclick="openModal('assets/img/carrossel/carrossel (6).png')">
+                    <img src="assets/img/carrossel/carrossel (6).png" alt="Doce Amor" class="w-full h-80 md:h-96 object-cover" />
+                </div>
+                <div class="diamond-border w-64 md:w-72 flex-shrink-0" onclick="openModal('assets/img/carrossel/carrossel (7).png')">
+                    <img src="assets/img/carrossel/carrossel (7).png" alt="Doce Amor" class="w-full h-80 md:h-96 object-cover" />
+                </div>
+                <div class="diamond-border w-64 md:w-72 flex-shrink-0" onclick="openModal('assets/img/carrossel/carrossel (9).png')">
+                    <img src="assets/img/carrossel/carrossel (9).png" alt="Doce Amor" class="w-full h-80 md:h-96 object-cover" />
+                </div>
+                <div class="diamond-border w-64 md:w-72 flex-shrink-0" onclick="openModal('assets/img/carrossel/carrossel (10).png')">
+                    <img src="assets/img/carrossel/carrossel (10).png" alt="Doce Amor" class="w-full h-80 md:h-96 object-cover" />
+                </div>
+                
+                <!-- Set 2 (Cópia exata para rolagem infinita) -->
+                <div class="diamond-border w-64 md:w-72 flex-shrink-0" onclick="openModal('assets/img/carrossel/carrossel (1).jpg')">
+                    <img src="assets/img/carrossel/carrossel (1).jpg" alt="Doce Amor" class="w-full h-80 md:h-96 object-cover" />
+                </div>
+                <div class="diamond-border w-64 md:w-72 flex-shrink-0" onclick="openModal('assets/img/carrossel/carrossel (3).png')">
+                    <img src="assets/img/carrossel/carrossel (3).png" alt="Doce Amor" class="w-full h-80 md:h-96 object-cover" />
+                </div>
+                <div class="diamond-border w-64 md:w-72 flex-shrink-0" onclick="openModal('assets/img/carrossel/carrossel (4).png')">
+                    <img src="assets/img/carrossel/carrossel (4).png" alt="Doce Amor" class="w-full h-80 md:h-96 object-cover" />
+                </div>
+                <div class="diamond-border w-64 md:w-72 flex-shrink-0" onclick="openModal('assets/img/carrossel/carrossel (5).png')">
+                    <img src="assets/img/carrossel/carrossel (5).png" alt="Doce Amor" class="w-full h-80 md:h-96 object-cover" />
+                </div>
+                <div class="diamond-border w-64 md:w-72 flex-shrink-0" onclick="openModal('assets/img/carrossel/carrossel (6).png')">
+                    <img src="assets/img/carrossel/carrossel (6).png" alt="Doce Amor" class="w-full h-80 md:h-96 object-cover" />
+                </div>
+                <div class="diamond-border w-64 md:w-72 flex-shrink-0" onclick="openModal('assets/img/carrossel/carrossel (7).png')">
+                    <img src="assets/img/carrossel/carrossel (7).png" alt="Doce Amor" class="w-full h-80 md:h-96 object-cover" />
+                </div>
+                <div class="diamond-border w-64 md:w-72 flex-shrink-0" onclick="openModal('assets/img/carrossel/carrossel (9).png')">
+                    <img src="assets/img/carrossel/carrossel (9).png" alt="Doce Amor" class="w-full h-80 md:h-96 object-cover" />
+                </div>
+                <div class="diamond-border w-64 md:w-72 flex-shrink-0" onclick="openModal('assets/img/carrossel/carrossel (10).png')">
+                    <img src="assets/img/carrossel/carrossel (10).png" alt="Doce Amor" class="w-full h-80 md:h-96 object-cover" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. MANIFESTO DA MARCA -->
+    <section id="manifesto" class="py-24 bg-brand-offwhite text-brand-dark">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <div class="aspect-[4/5] overflow-hidden rounded-sm bg-white shadow-sm p-4">
+                    <img src="assets/img/boxflor.png" alt="Manifesto Doce Amor" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000 ease-in-out" />
+                </div>
+                <!-- Decorative element -->
+                <div class="absolute -bottom-6 -right-6 w-32 h-32 border border-brand-gold/50 z-0 hidden md:block"></div>
+            </div>
+            <div class="flex flex-col justify-center">
+                <h2 class="font-serif text-3xl md:text-5xl mb-8 text-brand-gold leading-tight">O Propósito</h2>
+                <p class="font-sans font-light text-lg mb-6 leading-relaxed text-brand-gray">
+                    Uma marca criada com carinho, dedicação e o propósito de transformar momentos em memórias inesquecíveis.
+                </p>
+                <p class="font-sans font-light text-lg mb-6 leading-relaxed text-brand-gray">
+                    Cada detalhe é pensado com amor. Cada doce é feito para encantar. Cada celebração merece ser única.
+                </p>
+                <div class="w-12 h-px bg-brand-gold mb-6"></div>
+                <p class="font-sans font-medium text-xl md:text-2xl italic text-brand-dark font-serif">
+                    Seja bem-vindo(a) ao universo onde o amor vira doce.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. A VITRINE DE JOIAS -->
+    <section id="colecoes" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="font-serif text-4xl md:text-5xl mb-6 text-brand-dark">A Vitrine de Joias</h2>
+                <div class="w-16 h-px bg-brand-gold mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20">
+                <!-- Coleção Noivados -->
+                <div class="group flex flex-col items-center text-center">
+                    <div class="w-full aspect-[4/3] overflow-hidden bg-brand-offwhite mb-8 relative p-2 border border-gray-100">
+                        <img src="assets/img/case.png" alt="Noivados e Save the Date" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 ease-in-out" />
+                        <div class="absolute inset-0 bg-brand-dark/5 group-hover:bg-transparent transition-colors duration-500"></div>
+                    </div>
+                    <h3 class="font-serif text-2xl md:text-3xl mb-4 text-brand-dark">Noivados & Save the Date</h3>
+                    <p class="font-sans font-light text-sm md:text-base text-brand-gray leading-relaxed mb-8 px-4 max-w-lg">
+                        A sofisticação mora nos detalhes. Nossos brigadeiros personalizados elevam o conceito de doces finos, unindo a tradição do sabor à delicadeza de uma joia. Um Save the Date para ser saboreado com os olhos e com o coração. ✨
+                    </p>
+                    <a href="https://wa.me/5561998907423?text=Olá, gostaria de solicitar um orçamento para a Coleção Noivados & Save the Date." target="_blank" class="text-xs font-sans tracking-widest uppercase border-b border-brand-gold text-brand-gold pb-1 hover:text-brand-dark hover:border-brand-dark transition-colors duration-300">Solicitar Orçamento via WhatsApp</a>
+                </div>
+                
+                <!-- Coleção Presentes -->
+                <div class="group flex flex-col items-center text-center">
+                    <div class="w-full aspect-[4/3] overflow-hidden bg-brand-offwhite mb-8 relative p-2 border border-gray-100">
+                        <img src="assets/img/multipladoces.png" alt="Presentes e Afeto" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 ease-in-out" />
+                        <div class="absolute inset-0 bg-brand-dark/5 group-hover:bg-transparent transition-colors duration-500"></div>
+                    </div>
+                    <h3 class="font-serif text-2xl md:text-3xl mb-4 text-brand-dark">Presentes & Afeto</h3>
+                    <p class="font-sans font-light text-sm md:text-base text-brand-gray leading-relaxed mb-8 px-4 max-w-lg">
+                        Não é apenas uma caixa de doces. É um presente pensado em cada detalhe. Do laço delicado ao sabor de cada brigadeiro, tudo é preparado para transformar um simples momento em algo especial. Porque presentear também é uma forma de demonstrar carinho. 💝 Nossas caixinhas com rosas são feitas para encantar desde o primeiro olhar… e conquistar no primeiro sabor 💗 Perfeitas para presentear, surpreender ou transformar momentos simples em algo inesquecível 🎁
+                    </p>
+                    <a href="https://wa.me/5561998907423?text=Olá, gostaria de solicitar um orçamento para a Coleção Presentes & Afeto." target="_blank" class="text-xs font-sans tracking-widest uppercase border-b border-brand-gold text-brand-gold pb-1 hover:text-brand-dark hover:border-brand-dark transition-colors duration-300">Solicitar Orçamento via WhatsApp</a>
+                </div>
+                
+                <!-- Coleção Eventos Temáticos -->
+                <div class="group flex flex-col items-center text-center">
+                    <div class="w-full aspect-[4/3] overflow-hidden bg-brand-offwhite mb-8 relative p-2 border border-gray-100">
+                        <img src="assets/img/maolucadoces.png" alt="Eventos Temáticos sob Medida" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 ease-in-out" />
+                        <div class="absolute inset-0 bg-brand-dark/5 group-hover:bg-transparent transition-colors duration-500"></div>
+                    </div>
+                    <h3 class="font-serif text-2xl md:text-3xl mb-4 text-brand-dark">Eventos Temáticos sob Medida</h3>
+                    <p class="font-sans font-light text-sm md:text-base text-brand-gray leading-relaxed mb-8 px-4 max-w-lg">
+                        Personalizados que contam histórias. Tema, cores e detalhes feitos sob medida para um momento inesquecível. Delicadeza, sensualidade e muito sabor para tornar seu momento especial... Transformando paixão em doces personalizados cheios de sabor, carinho e identidade. Nossos doces personalizados unem elegância, sabor e exclusividade em uma experiência única 🤍🩵
+                    </p>
+                    <a href="https://wa.me/5561998907423?text=Olá, gostaria de solicitar um orçamento para a Coleção Eventos Temáticos." target="_blank" class="text-xs font-sans tracking-widest uppercase border-b border-brand-gold text-brand-gold pb-1 hover:text-brand-dark hover:border-brand-dark transition-colors duration-300">Solicitar Orçamento via WhatsApp</a>
+                </div>
+                
+                <!-- Coleção Sazonal -->
+                <div class="group flex flex-col items-center text-center">
+                    <div class="w-full aspect-[4/3] overflow-hidden bg-brand-offwhite mb-8 relative p-2 border border-gray-100">
+                        <img src="assets/img/urso.png" alt="Coleção Sazonal" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 ease-in-out" />
+                        <div class="absolute inset-0 bg-brand-dark/5 group-hover:bg-transparent transition-colors duration-500"></div>
+                    </div>
+                    <h3 class="font-serif text-2xl md:text-3xl mb-4 text-brand-dark">Coleção Sazonal (Ex: Páscoa)</h3>
+                    <p class="font-sans font-light text-sm md:text-base text-brand-gray leading-relaxed mb-8 px-4 max-w-lg">
+                        Delicadeza em cada detalhe 💛✨ Nossas caixinhas de Páscoa foram pensadas para encantar desde o primeiro olhar… laços elegantes, acabamentos impecáveis e doces que são puro carinho em forma de presente 🐰
+                    </p>
+                    <a href="https://wa.me/5561998907423?text=Olá, gostaria de solicitar um orçamento para a Coleção Sazonal." target="_blank" class="text-xs font-sans tracking-widest uppercase border-b border-brand-gold text-brand-gold pb-1 hover:text-brand-dark hover:border-brand-dark transition-colors duration-300">Solicitar Orçamento via WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SEÇÃO DE AGENDAMENTO EXCLUSIVO -->
+    <section id="agendamento" class="py-24 bg-brand-rose/10 text-center relative overflow-hidden">
+        <!-- Decoração sutil de fundo -->
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-rose/30 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-rose/30 to-transparent"></div>
+        
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <h2 class="font-serif text-3xl md:text-4xl text-brand-dark mb-8">Agendamento Exclusivo</h2>
+            <div class="bg-white p-8 md:p-12 shadow-sm rounded-sm border border-brand-rose/20">
+                <p class="font-sans font-medium text-brand-dark text-lg md:text-xl mb-6 leading-relaxed">
+                    🚨 Abrimos algumas exceções e estamos atendendo poucos pedidos extras! <br class="hidden md:block" />Mas são últimas vagas, viu? 👀✨ Garanta o seu antes que finalize 💝
+                </p>
+                <div class="w-12 h-px bg-brand-gold mx-auto mb-6"></div>
+                <p class="font-sans font-light text-brand-gray text-base mb-6 leading-relaxed">
+                    Aqui, cada doce é preparado com carinho, cuidado e aquele toque especial que só quem ama o que faz consegue entregar 💕
+                </p>
+                <p class="font-sans font-medium text-brand-dark text-sm md:text-base mb-10">
+                    📩 Encomendas abertas para aniversários, casamentos, batizados e eventos especiais. <br class="hidden md:block" />📲 Garanta a sua com antecedência.
+                </p>
+                <a href="https://wa.me/5561998907423" target="_blank" class="inline-flex items-center justify-center bg-brand-dark text-brand-offwhite hover:bg-brand-gold transition-colors duration-300 px-10 py-4 uppercase tracking-widest text-xs md:text-sm font-medium">
+                    Garantir Minha Encomenda
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. RODAPÉ -->
+    <footer class="bg-brand-dark text-brand-offwhite py-16 text-center">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="mb-10">
+                <img src="assets/img/logo duplo.png" alt="Doce Amor Logo" class="h-20 mx-auto brightness-0 invert opacity-90 object-contain" />
+            </div>
+            <p class="font-serif text-xl md:text-2xl italic text-brand-goldlight mb-10 max-w-2xl mx-auto leading-relaxed">
+                "Delicadeza em cada detalhe, feita para transformar momentos especiais em memórias inesquecíveis."
+            </p>
+            <div class="flex justify-center space-x-10 mb-12 font-sans text-xs tracking-widest uppercase font-medium">
+                <a href="https://www.instagram.com/_doceamor.doces" target="_blank" class="hover:text-brand-gold transition-colors duration-300">Instagram</a>
+                <a href="https://wa.me/5561998907423" target="_blank" class="hover:text-brand-gold transition-colors duration-300">WhatsApp</a>
+            </div>
+            <div class="border-t border-white/10 pt-8 text-xs font-sans text-white/40 flex flex-col md:flex-row justify-between items-center tracking-wide">
+                <p>&copy; 2026 Doce Amor. Todos os direitos reservados.</p>
+                <!-- Notas de DevOps/Ambiente: Emirados2000WP | Contato Técnico: 556198281-2679 -->
+                <p class="mt-4 md:mt-0">DevOps: Emirados2000WP | Suporte: +55 61 98281-2679</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="fixed inset-0 z-[100] hidden bg-black/90 backdrop-blur-sm flex-col items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <button onclick="closeModal()" class="absolute top-6 right-6 text-white text-4xl hover:text-brand-gold transition-colors z-50">&times;</button>
+        <div class="relative max-w-4xl w-full flex flex-col items-center">
+            <img id="modalImage" src="" alt="Imagem Ampliada" class="max-w-full max-h-[70vh] object-contain rounded-sm shadow-2xl mb-8 border-4 border-brand-offwhite" />
+            <a id="modalContactLink" href="https://wa.me/5561998907423?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20este%20produto." target="_blank" class="inline-block bg-brand-gold text-brand-offwhite px-8 py-4 uppercase tracking-widest text-sm font-medium hover:bg-white hover:text-brand-dark transition-all duration-300">
+                Solicitar Orçamento Desta Peça
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+
+        function openModal(imageSrc) {
+            modalImg.src = imageSrc;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            // Timeout to allow display block to apply before changing opacity for transition
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.classList.add('opacity-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                modalImg.src = '';
+            }, 300); // matches duration-300
+        }
+
+        // Close when clicking outside the image
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal || e.target.parentElement === modal) {
+                closeModal();
+            }
+        });
+    </script>
+
+</body>
+</html>
